@@ -1,7 +1,7 @@
 "use strict";
 
 function GCD(a, b) {
-  if (!Number.isInteger(a) || !Number.isInteger(b) || (a === 0 && b === 0)) {
+  if (!Number.isInteger(a) || !Number.isInteger(b) || a === 0 || b === 0) {
     return "Invalid input detected";
   }
   a = Math.abs(a);
@@ -30,5 +30,5 @@ console.log(GCD(7, 13)); // 1
 console.log(GCD(-12, 6)); // 6
 console.log(GCD(12.1, 6)); // Invalit input detected
 console.log(GCD("12", 6)); // Invalit input detected
-console.log(GCD(0, 6)); // 6
+console.log(GCD(0, 6)); // Invalit input detected
 console.log(GCD(0, 0)); // Invalit input detected
