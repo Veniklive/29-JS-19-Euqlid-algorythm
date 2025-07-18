@@ -1,25 +1,21 @@
 "use strict";
 
 function greatestCommonDivisor(a, b) {
-  if (
-    !Number.isInteger(a) ||
-    !Number.isInteger(b) ||
-    a === 0 ||
-    b === 0 ||
-    a < 0 ||
-    b < 0
-  ) {
-    return "Invalid input detected";
-  }
-
-  while (a !== 0 && b !== 0) {
-    if (a > b) {
-      a = a % b;
-    } else {
-      b = b % a;
+  try {
+    if (!Number.isInteger(a) || !Number.isInteger(b) || a <= 0 || b <= 0) {
+      return new TypeError("Invalid input detected");
     }
+    while (a !== 0 && b !== 0) {
+      if (a > b) {
+        a = a % b;
+      } else {
+        b = b % a;
+      }
+    }
+    return a + b;
+  } catch (error) {
+    return error;
   }
-  return a + b;
 }
 
 console.log(greatestCommonDivisor(12, 6)); //6
